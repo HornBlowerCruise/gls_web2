@@ -7,6 +7,8 @@ import { ReactComponent as LeafIcon } from "../../../Assets/img/sidebuttonIcons/
 import { ReactComponent as HouseIcon } from "../../../Assets/img/sidebuttonIcons/house.svg"
 import { ReactComponent as BubbleIcon } from "../../../Assets/img/sidebuttonIcons/bubble.svg"
 import { ReactComponent as PlusIcon } from "../../../Assets/img/sidebuttonIcons/plus.svg"
+import { actionCreators as userActions} from "../../../Redux/Modules/User"
+import { useDispatch } from "react-redux";
 
 // 호출한 부모 컴포넌트에서 모달 open/close에 관여하는 state를 관리해야합니다!
 // const [open, setOpen] = React.useState(false);
@@ -24,7 +26,8 @@ import { ReactComponent as PlusIcon } from "../../../Assets/img/sidebuttonIcons/
 
 const SideButton = (props) => {
   const history = useHistory();
-
+  const dispatch = useDispatch();
+  const isLogin = localStorage.getItem('token');
   //+버튼 모달창
 
   const openModal = () => {
@@ -44,26 +47,42 @@ const SideButton = (props) => {
           <Dimmer setOpenModal={props.setOpen} onClick={() => openModal()} />
           {/* 부모 엘리먼트에게 이벤트 전달을 중단 */}
           <Modal onClick={e => e.stopPropagation()}> 
-            <InnerWrap onClick={() => history.push('/plant')}>
+            {/* <InnerWrap onClick={() => history.push('/plant')}>
               <LeafIcon style={{width:'24px', height:'24px'}}/>
               <PlusIcon className="plus"/>
               <Grid margin="0 8px">
                 <Text size="small" >식물 추가하기</Text>
               </Grid>
-            </InnerWrap>
+            </InnerWrap> */}
 
             <InnerWrap>
               <Grid width="100%">
-                <InnerBox1 onClick={() => history.push(`/planterior/write`)}>
+                {/* <InnerBox1 onClick={() => history.push(`/planterior/write`)}>
                   <HouseIcon style={{width:'24px', height:'24px'}}/>
                   <Grid margin="0 8px">
                     <Text size="small">식물 공간 올리기</Text>
                   </Grid>
-                </InnerBox1>
+                </InnerBox1> */}
+                {isLogin ? 
+                <InnerBox1 onClick={() => dispatch(userActions.logOutDB())}>
+                  <HouseIcon style={{width:'24px', height:'24px'}}/>
+                  
+                    <Grid margin="0 8px">
+                    <Text size="small">로그아웃</Text>
+                  </Grid>
+                </InnerBox1> : 
+                <InnerBox1 onClick={() => history.push("/")}>
+                <HouseIcon style={{width:'24px', height:'24px'}}/>
+                
+                  <Grid margin="0 8px">
+                  <Text size="small">로그인</Text>
+                </Grid>
+              </InnerBox1>}
+
                 <InnerBox2 onClick={() => history.push(`/addpost`)}>
                   <BubbleIcon style={{width:'24px', height:'24px'}}/>
                   <Grid margin="0 8px">
-                    <Text size="small">초록톡 글쓰기</Text>
+                    <Text size="small">게시판 글쓰기</Text>
                   </Grid>
                 </InnerBox2>
               </Grid>

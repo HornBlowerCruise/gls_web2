@@ -1,10 +1,11 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
 import styled, { ThemeProvider } from 'styled-components';
-import { AddDone, Navbar } from '../Components';
+import { AddDone } from '../Components';
 import MobileFrame from '../Components/MobileFrame';
+import Home from '../Pages/Home/Home';
 import {
-  Login, Home, SignUp, Kakao, Google, ProfileSetting, Labeling,
+  Login, SignUp, Kakao, Google, ProfileSetting, Labeling,
   Recommendation, FindPwd, ChangePwd,
   AddPlants, SearchPlant, PlantCard,
   Search, PlanteriorDetail, PlanteriorWrite,
@@ -25,8 +26,14 @@ import { ReactComponent as Frame } from '../Assets/img/phoneframe.svg';
 import { useLocation, Switch } from 'react-router-dom';
 import Event from '../Pages/Event';
 import NotFound from '../Pages/NotFound';
-
-
+import ContactInfo from '../Pages/ContactInfo';
+import Navbar2 from '../Pages/Navbar2';
+import Submenu01 from '../Pages/Topmenu01/Submenu01';
+import { Navbar } from '../Components';
+import Notice from '../Pages/Topmenu04/Notice';
+import WorkCase from '../Pages/Topmenu03/WorkCase';
+import Submenu02 from '../Pages/Topmenu02/Submenu02';
+import Contact from '../Pages/Topmenu05/Contact';
 
 function App() {
 
@@ -34,9 +41,10 @@ function App() {
 
   return (
     <React.Fragment>
-      <ThemeProvider theme={theme} >
-        <Wrap>
-          <MobileFrame className="MobileFramePage">
+      <Navbar2/>
+      {/* <ThemeProvider theme={theme} > */}
+        {/* <Wrap> */}
+          {/* <MobileFrame className="MobileFramePage"> */}
           {/* <Frame className='frame'/> */}
           <Switch>
             <Route path="/" exact component={Login} />
@@ -93,41 +101,50 @@ function App() {
             <Route path="/setting/deactivation" exact component={DeactivateAccount} />
 
             <Route path="/event" exact component={Event} />
+
+            <Route path="/topmenu01/submenu01" exact component={Submenu01}/>
+            <Route path="/topmenu03/submenu01" exact component={WorkCase}/>
+            <Route path="/topmenu04/submenu01" exact component={Notice}/>
+            <Route path="/topmenu02/submenu01" exact component={Submenu02}/>
+            <Route path="/topmenu05/submenu01" exact component={Contact}/>
             
             <Route component={NotFound} />
+
           </Switch>
-            { lo === "" || lo === "labeling" || lo === "add" || lo === 'event' ? null : <Navbar /> }
+            {/* { lo === "" || lo === "labeling" || lo === "add" || lo === 'event' ? null : <Navbar /> } */}
             
-          </MobileFrame>
-        </Wrap>
-      </ThemeProvider>
+          {/* </MobileFrame> */}
+        {/* </Wrap> */}
+      {/* </ThemeProvider> */}
+      <ContactInfo/>
+      {/* <Navbar/> */}
     </React.Fragment>
   );
 }
 
 
-const Wrap = styled.div`
-  width: 100vw;
-  height: 100vh;
-  background-image: url('/img/background/desktop.svg');
-  background-repeat: no-repeat;
-  background-size: cover;
+// const Wrap = styled.div`
+//   width: 100vw;
+//   height: 100vh;
+//   background-image: url('/img/background/desktop.svg');
+//   background-repeat: no-repeat;
+//   background-size: cover;
 
-  @media ${({ theme }) => theme.device.labtop} {
-  background-image: url('/img/background/labtop.svg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  }
+//   @media ${({ theme }) => theme.device.labtop} {
+//   background-image: url('/img/background/labtop.svg');
+//   background-repeat: no-repeat;
+//   background-size: cover;
+//   }
 
-  @media ${({ theme }) => theme.device.tablet} {
-  background-image: url('/img/background/tablet.svg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  }
+//   @media ${({ theme }) => theme.device.tablet} {
+//   background-image: url('/img/background/tablet.svg');
+//   background-repeat: no-repeat;
+//   background-size: cover;
+//   }
 
-  .MobileFramePage {
-    z-index: 999;
-  }
-`
+//   .MobileFramePage {
+//     z-index: 999;
+//   }
+// `
 
 export default App;

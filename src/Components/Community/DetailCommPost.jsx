@@ -49,8 +49,9 @@ const DetailCommPost = (props) => {
 
     
     return (
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(1, 1fr)', gridGap: '20px', justifyItems: 'center', alignItems: 'start', paddingLeft:'200px', paddingRight:'200px'}}>
         <React.Fragment>
-            <Grid width="100%" padding="20px" margin="0px">
+            <Grid width="500px" padding="20px" margin="0px">
                 <Grid width="100%" >
                     <Grid><Text size="xsmall" color="#24A148">{post?.postType}</Text></Grid>
                 </Grid>
@@ -111,9 +112,9 @@ const DetailCommPost = (props) => {
                     </Grid>
                 </Grid>
             </Grid>
-                    <Grid height="1px" width="100%" bg="#E0E0E0" />
+                    {/* <Grid height="1px" width="100%" bg="#E0E0E0" /> */}
         </React.Fragment>
-
+        </div>
     )
 }
 

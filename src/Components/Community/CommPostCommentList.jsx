@@ -10,6 +10,7 @@ import { useEffect } from "react";
 import MoreContentSheet from "../share/posting/MoreContentSheet";
 import Alert2 from "../share/modal/Alert2";
 
+
 const CommPostCommentList = (props) => {
   const { content, name, time, img, commentId } = props;
 
@@ -30,9 +31,13 @@ const CommPostCommentList = (props) => {
 
 
   return (
-    <Grid width="100%">
+    // <div style="display: flex; justify-contents: center;">
+    // <div>
+      <CommentHolder>
+    <Grid width="700px">
       <CommentWrapper>
         {edit ?
+        
           <CommentBox>
             <CommentWrite
               choroktalk
@@ -42,8 +47,8 @@ const CommPostCommentList = (props) => {
               setOpen={props.setOpen}
               setMessage={props.setMessage}
               placeholder="수정할 내용을 입력해주세요." />
-
           </CommentBox>
+  
           :
           <Grid width="100%" padding="16px">
             <ProfileBox>
@@ -83,14 +88,21 @@ const CommPostCommentList = (props) => {
         </AlertBox>
       }
     </Grid>
+    </CommentHolder>
+    // </div>
   )
 
 }
+const CommentHolder = styled.div`
+display: grid;
+place-items:center;
+`
+
 
 const CommentBox = styled.div`
   position: relative;
   box-sizing: border-box;
-
+  z-index:1;
   width: 100%;
 
   background: #fff;
@@ -102,8 +114,9 @@ const ProfileBox = styled.div`
 `
 const CommentWrapper = styled.div`
     position: relative;
-    width: 100%;
+    width: 700px;
     min-height: 52px;
+    
 `
 
 const AbsoluteBox = styled.div`

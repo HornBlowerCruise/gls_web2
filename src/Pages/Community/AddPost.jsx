@@ -35,19 +35,19 @@ const AddPost = () => {
     return (
         <React.Fragment>
             <Permit>
-                <AddPostHeader submit={submit} disable={postTitle === "" || postContent === "" || category === ""} title="초록톡 글쓰기" />
+                <AddPostHeader submit={submit} disable={postTitle === "" || postContent === "" || category === ""} title="글쓰기" />
                 <Grid height="1px" width="100%" bg="#E0E0E0" />
                 <Grid margin="16px">
-                    <Button type="filter" checked={category === "postType02"} _onClick={() => { setCategory("postType02") }}>질문</Button>
-                    <Button type="filter" checked={category === "postType03"} _onClick={() => { setCategory("postType03") }}>식물성장일기</Button>
-                    <Button type="filter" checked={category === "postType04"} _onClick={() => { setCategory("postType04") }}>식물추천</Button>
+                    {/* <Button type="filter" checked={category === "postType02"} _onClick={() => { setCategory("postType02") }}>질문</Button> */}
+                    <Button type="filter" checked={category === "postType03"} _onClick={() => { setCategory("postType03") }}>업무사례</Button>
+                    <Button type="filter" checked={category === "postType04"} _onClick={() => { setCategory("postType04") }}>공지사항</Button>
                 </Grid>
                 <Grid padding="0 16px" width="100%">
                     <Input maxLength="25" type="text" placeholder='글 제목을 입력해주세요'
                     onChange={(e) => {setPostTitle(e.target.value)}}></Input>
                 </Grid>
                 <Grid width="100%" padding="16px">
-                    <Textarea placeholder='이웃집사들과 다양한 이야기를 나누어보세요'
+                    <Textarea placeholder='본문 내용을 입력해주세요'
                         onChange={(e) => { setPostContent(e.target.value) }}></Textarea>
                 </Grid>
                 <FixedBox>
@@ -136,6 +136,6 @@ const HR = styled.hr`
 
 const FixedBox = styled.div`
     position: fixed;
-    bottom: 56px;
+    bottom: 300px;
 `
 export default AddPost;

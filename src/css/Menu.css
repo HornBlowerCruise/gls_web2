@@ -1,0 +1,68 @@
+/* div {
+    overflow-x: hidden;
+} */
+
+.imgContainer {
+    height: 600px;
+    width: 100%;
+    /* overflow: hidden; */
+    position: relative;
+    /* background-image: url('https://mblogthumb-phinf.pstatic.net/MjAxOTEyMTJfMjI3/MDAxNTc2MTQwMTI3MDQz.BH9CTAPX29-JwHo7tubyLgj79pa_AlukXsEkHS7bZUQg.0cwrlsegcy5RmK5I1bUNMydz555ZTkhCnWE-WJcq6dMg.JPEG.hanbit_goodnews/1576140125987.jpg?type=w800'); */
+    /* background-size: cover; */
+    /* background-position: center;  */
+    
+}
+
+.imgContainer > img {
+    position: absolute;
+    /* width: 100%; */
+    height: 600px;
+    /* top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); */
+    object-fit: cover;
+    z-index: 0;
+} 
+
+.submenuContainer {
+    display: grid;
+    height: 70px;
+    background-color: antiquewhite;
+    z-index: 1;
+}
+
+.submenuContainer > item {
+
+}
+
+.passage {
+    /* height: 500px; */
+    font-size: 35px;
+    padding-top: 40px;
+    text-align: center;
+    padding-bottom: 40px;
+
+}
+
+.passage2 {
+    /* height: 500px; */
+    font-size: 26px;
+    padding-top: 30px;
+    padding-left:200px;
+    padding-right:200px;
+    text-align: left;
+    line-height: 50px;
+
+}
+
+.passage3 {
+    
+    font-size: 26px;
+    padding-top: 30px;
+    padding-left:200px;
+    padding-right:200px;
+    padding-bottom:30px;
+    text-align: center;
+    line-height: 50px;
+
+}

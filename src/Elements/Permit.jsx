@@ -31,10 +31,12 @@ const Permit = (props) => {
         return (
             <React.Fragment>
                     <Grid width="100%" margin="20vh auto" align="center">
+                        
                         <Text size="h5">로그인이 필요한<br />서비스입니다</Text>
-                        <Grid margin="20px auto">
+                        <br></br><br></br>
+                        {/* <Grid margin="20px auto">
                             <Icon />
-                        </Grid>
+                        </Grid> */}
                         <Grid margin="0 auto">
                             <Button
                                 type="float"
@@ -43,7 +45,7 @@ const Permit = (props) => {
                             </Button>
                             <Grid margin="8px auto">
                                 <Button type="tran" _onClick={() => { history.push('/home'); }}>
-                                    <Text color="#6F6F6F">초록 홈으로</Text>
+                                    <Text color="#6F6F6F">홈으로</Text>
                                 </Button>
                             </Grid>
                         </Grid>

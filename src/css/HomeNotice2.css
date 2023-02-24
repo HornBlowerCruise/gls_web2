@@ -1,0 +1,55 @@
+body {
+    overflow-y: auto;
+  }
+
+.homeNoticeContainer {
+    height: 700px;
+    padding: 130px 100px 130px 100px;
+    background-color: #ffffff;
+}
+
+.notices {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    /* border: 1px solid gray; */
+    font-size: 40px;
+}
+
+.notices > item > span {
+    font-size: 14px;
+}
+
+.notices > .casesEx {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    align-content: space-between;
+    grid-gap: 10px;
+}
+
+.notices > .casesEx > item {
+    width: 350px;
+    height: 370px;
+    border: 1px solid #adb5bd;
+} 
+
+.notices > .casesEx > item > span {
+    color: #900020;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.notices > .casesEx > item > span > div{
+    color: #000000;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+
+  @media (max-width: 900px){
+      /* .card{
+          display: none;
+      } */
+      .notices {
+        grid-template-columns: 1fr;
+      }
+  }

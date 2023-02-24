@@ -29,6 +29,7 @@ const AddPostHeader = (props) => {
 }
 const Header = styled.div`
     width: 100%;
+    padding-top:100px;
     height: 44px;
     display: grid;
     grid-template-columns: 1fr 3fr 1fr;

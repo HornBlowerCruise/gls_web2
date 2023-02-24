@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import { Button, Container, Text, Grid } from "../../Elements";
 import { CommPostList, CommunityFilter, Dimmer, SearchHeader, SideButton } from "../../Components";
 import { useHistory } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { ReactComponent as LeafIcon } from "../../Assets/img/sidebuttonIcons/leaf.svg"
 import { ReactComponent as HouseIcon } from "../../Assets/img/sidebuttonIcons/house.svg"
 import { ReactComponent as BubbleIcon } from "../../Assets/img/sidebuttonIcons/bubble.svg"
@@ -14,7 +14,9 @@ const Community = () => {
   const history = useHistory();
   const dispatch = useDispatch();
   const isLogin = localStorage.getItem('token') ? true : false;
-
+  
+  const currentType = useSelector(state => state.post?.showType);
+  console.log("COmmunity showType:", currentType);
   //infinite scroll 페이지네이션
   const [page, setPage] = React.useState(0);
 
@@ -22,16 +24,21 @@ const Community = () => {
   const [category, setCategory] = React.useState("all");
 
   const [open, setOpen] = React.useState(false);
+  React.useEffect(() => {
+    console.log("COmmunity showType:", currentType);
+  }, [currentType, category])
 
   return (
     <React.Fragment>
       <Container type="np">
         <Grid width="100%" position={open ? 'fixed' : 'nonset'}>
           <Grid padding="16px 0 0 16px" width="100%">
-            <SearchHeader category={category} />
-            <CommunityFilter page={page} setPage={setPage} setCategory={setCategory} category={category} />
+            {/* <SearchHeader category={category} /> */}
+            {/* <SearchHeader category={currentType} /> */}
+            {/* <CommunityFilter page={page} setPage={setPage} setCategory={setCategory} category={category} /> */}
+            <CommunityFilter page={page} setPage={setPage} setCategory={currentType} category={currentType} />
           </Grid>
-          <CommPostList page={page} setPage={setPage} category={category} isLogin={isLogin} />
+          <CommPostList page={page} setPage={setPage} category={currentType} isLogin={isLogin} />
           <Grid height="70px" />
           
           <SideButton open={open} setOpen={setOpen} />

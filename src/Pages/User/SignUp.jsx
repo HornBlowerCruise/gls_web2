@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import Grid from '../../Elements/Grid';
 import { useHistory } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { ReactComponent as Logo } from '../../Assets/img/logo/leafLogo.svg';
+// import { ReactComponent as Logo } from 'https://glsantioch.s3.ap-northeast-2.amazonaws.com/static/3eddfee6-9556-49ac-9834-4bbe84ea9282gls.jpeg';
 import { actionCreators as userActions } from '../../Redux/Modules/User';
 import { idCheck, pwdCheck } from '../../Shared/RegEx';
 import { userAPI } from '../../Shared/api';
@@ -246,7 +246,7 @@ const SignUp = () => {
                     <Text size="xsmall" color="#FA4D56"> 비밀번호가 일치하지 않습니다.</Text>
                   </Grid>
                 }
-                {/* <Text fontSize="0.7em" color="grey">비밀번호는 영문 대소문자, 숫자를 혼합하여 8~20자로 입력해주세요</Text> */}
+                <Text fontSize="0.7em" color="grey">비밀번호는 영문 대소문자, 숫자를 혼합하여 8~20자로 입력해주세요</Text>
               </Grid>
 
               {duplicated === true || passwordMatch(password, passwordChk) === false ?
@@ -328,23 +328,24 @@ const SignUp = () => {
 
             <Grid width="100%">
               <Grid margin="160px auto 32px auto">
-                <Logo />
+                {/* <Logo /> */}
               </Grid>
               <Grid margin="10px auto">
-                <Text weight="700">초록 가입을 환영합니다👍</Text>
+                <Text weight="700">가입을 환영합니다</Text>
               </Grid>
               <Grid margin="auto" align="center">
-                <Text size="small">아래의 메일로 인증 메일을 전송하였습니다. <br />전송된 메일에서 링크를 클릭하면 <br />회원가입이 완료됩니다.</Text>
+                <Text size="small">가입하신 정보로<br />로그인 해주세요. <br /></Text>
                 <Grid margin="20px 0px 16px 0px" bg="#F7F8FA" width="100%" height="48px" borderRadius="6px" align="center" is_flex>
                   <Text>{userEmail}</Text>
                 </Grid>
                 <Grid margin="auto"
                   _onClick={() => { 
-                    dispatch(userActions.signUpDB(userEmail, password, nickname, profileImgUrl)); 
-                    setOpen(true); 
-                    setMessage("인증메일을 재발송하였습니다."); 
-                    console.log(open);}}>
-                  <p style={{color: "#8D8D8D", fontSize: "13px", borderBottom: "1px solid #8D8D8D"}}> 인증메일 재발송 </p>
+                    history.push("/"); 
+                    // setOpen(true); 
+                    // setMessage("인증메일을 재발송하였습니다."); 
+                    // console.log(open);
+                    }}>
+                  <p style={{color: "#8D8D8D", fontSize: "13px", borderBottom: "1px solid #8D8D8D"}}> 홈으로 </p>
                 </Grid>
               </Grid>
             </Grid>

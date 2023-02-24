@@ -16,7 +16,7 @@ import ProfileSetting from "./User/ProfileSetting";
 import Recommendation from "./User/Recommendation";
 
 // 메인페이지
-import Home from "./Home";
+import Home from "./Home/Home";
 
 // 식물카드
 import PlantCard from "./PlantCard/PlantCard";
@@ -60,7 +60,7 @@ import Test from "./Test";
 export { Login, SignUp, EmailValidation, Kakao, Google, LogInEmail,
     FindPwd, ChangePwd, 
     Labeling, ProfileSetting,
-    Home, Recommendation,
+    Recommendation,
     AddPlants, SearchPlant,
     CalendarPage,
     PlantCard,

@@ -50,6 +50,7 @@ const PostDetail = () => {
 
   const is_local = localStorage.getItem('token') ? true : false;
 
+
   if (!post) {
     return (
       <React.Fragment>
@@ -62,8 +63,8 @@ const PostDetail = () => {
 
   return (
     <React.Fragment>
-      <Permit>
-        <Container type="np">
+          <Permit>
+          <Container type="np">
           <GeneralHeader title={post?.postType} size="base" />
           {is_local && nickname === post?.nickname ?
             <CommBottomSheet type="post" postId={post?.postId} setDeleteOpen={setDeleteOpen} /> :
@@ -72,10 +73,11 @@ const PostDetail = () => {
 
         </Container>
         <Container type="np">
-          <Grid width="100%" height="1px" bg="#E0E0E0" />
+          {/* <Grid width="500px" height="1px" bg="#E0E0E0" /> */}
           <DetailCommPost postList={post} />
           {commentList?.map((cmt) => {
             return (
+              
               <CommPostCommentList
                 key={cmt?.commentId}
                 postId={post?.postId}
@@ -97,6 +99,7 @@ const PostDetail = () => {
               setMessage={setMessage}
               setOpen={setOpen}
               open={open} />
+              
           </FixWrapper>
         </Wrapper>
         {deleteOpen &&
@@ -106,31 +109,36 @@ const PostDetail = () => {
                 게시글을 삭제할까요?
               </Text>
             </Alert2>
-          </AlertBox>
+          </AlertBox> 
         }
-        <Alert2 btn1="확인" open={open} setOpen={setOpen}>
-          <Text size="small">{message}</Text>
-        </Alert2>
-        <div style={{ height: "60px" }}></div>
-      </Permit>
-    </React.Fragment>
+        {/* <div style={{ height: "60px" }}></div> */}
+                
+                
+        </Permit>
+      </React.Fragment>
   )
-}
+// }
+// height: fit-content;
+// min-height: 2000px;
 
+}
+// height: 1400px;
 const Wrapper = styled.div`
 width: 100%;
 height: fit-content%;
 background: #F7F8FA;
-overflow: hidden;
+
 `
 
 const FixWrapper = styled.div`
   box-sizing: border-box;
-  position: fixed;
+  position: relative;
   bottom: 54px;
   width: 100%;
   border-top: 1px solid #E0E0E0;
   background: #F7F8FA;
+  display: grid;
+  place-items: center;
 `
 
 const AlertBox = styled.div`
@@ -141,3 +149,189 @@ const AlertBox = styled.div`
 `
 
 export default PostDetail;
+  
+// absolute covenant
+//       absolute covenant
+//       absolute covenant
+//       absolute covenant
+//       <br></br>
+//       <br></br>
+//       absolute covenant
+//       absolute covenant
+//       absolute covenant
+//       absolute covenant
+//       <br></br>
+//       <br></br>
+//       absolute covenant
+//       absolute covenant
+//       absolute covenant
+//       absolute covenant
+//       <br></br>
+//       <br></br>
+//       absolute covenant
+//       absolute covenant
+//       absolute covenant
+//       absolute covenant
+//       absolute covenant
+//       <br></br>
+//       <br></br>
+//       absolute covenantabsolute covenant
+//       absolute covenant
+//       absolute covenant
+//       absolute covenant
+//       absolute covenant
+//       <br></br>
+//       <br></br>
+//       absolute covenantabsolute covenant
+//       absolute covenant
+//       absolute covenant
+//       absolute covenant
+//       absolute covenant
+//       <br></br>
+//       <br></br>
+//       absolute covenantabsolute covenant
+//       absolute covenant
+//       absolute covenant
+//       absolute covenant
+//       absolute covenant
+//       absolute covenant
+//       <br></br>
+//       <br></br>absolute covenant
+//       absolute covenant
+//       absolute covenant
+//       absolute covenant
+//       <br></br>
+//       <br></br>
+//       absolute covenant
+//       absolute covenant
+//       absolute covenant
+//       absolute covenant
+//       <br></br>
+//       <br></br>
+//       absolute covenant
+//       absolute covenant
+//       absolute covenant
+//       absolute covenant
+//       <br></br>
+//       <br></br>
+//       absolute covenant
+//       absolute covenant
+//       absolute covenant
+//       absolute covenant
+//       absolute covenant
+//       <br></br>
+//       <br></br>
+//       absolute covenantabsolute covenant
+//       absolute covenant
+//       absolute covenant
+//       absolute covenant
+//       absolute covenant
+//       <br></br>
+//       <br></br>
+//       absolute covenantabsolute covenant
+//       absolute covenant
+//       absolute covenant
+//       absolute covenant
+//       absolute covenant
+//       <br></br>
+//       <br></br>
+//       absolute covenantabsolute covenant
+//       absolute covenant
+//       absolute covenant
+//       absolute covenant
+//       absolute covenant
+//       absolute covenant
+//       <br></br>
+//       <br></br>absolute covenant
+//       absolute covenant
+//       absolute covenant
+//       absolute covenant
+//       <br></br>
+//       <br></br>
+//       absolute covenant
+//       absolute covenant
+//       absolute covenant
+//       absolute covenant
+//       <br></br>
+//       <br></br>
+//       absolute covenant
+//       absolute covenant
+//       absolute covenant
+//       absolute covenant
+//       <br></br>
+//       <br></br>
+//       absolute covenant
+//       absolute covenant
+//       absolute covenant
+//       absolute covenant
+//       absolute covenant
+//       <br></br>
+//       <br></br>
+//       absolute covenantabsolute covenant
+//       absolute covenant
+//       absolute covenant
+//       absolute covenant
+//       absolute covenant
+//       <br></br>
+//       <br></br>
+//       absolute covenantabsolute covenant
+//       absolute covenant
+//       absolute covenant
+//       absolute covenant
+//       absolute covenant
+//       <br></br>
+//       <br></br>
+//       absolute covenantabsolute covenant
+//       absolute covenant
+//       absolute covenant
+//       absolute covenant
+//       absolute covenant
+//       absolute covenant
+//       <br></br>
+//       <br></br>absolute covenant
+//       absolute covenant
+//       absolute covenant
+//       absolute covenant
+//       <br></br>
+//       <br></br>
+//       absolute covenant
+//       absolute covenant
+//       absolute covenant
+//       absolute covenant
+//       <br></br>
+//       <br></br>
+//       absolute covenant
+//       absolute covenant
+//       absolute covenant
+//       absolute covenant
+//       <br></br>
+//       <br></br>
+//       absolute covenant
+//       absolute covenant
+//       absolute covenant
+//       absolute covenant
+//       absolute covenant
+//       <br></br>
+//       <br></br>
+//       absolute covenantabsolute covenant
+//       absolute covenant
+//       absolute covenant
+//       absolute covenant
+//       absolute covenant
+//       <br></br>
+//       <br></br>
+//       absolute covenantabsolute covenant
+//       absolute covenant
+//       absolute covenant
+//       absolute covenant
+//       absolute covenant
+//       <br></br>
+//       <br></br>
+//       absolute covenantabsolute covenant
+//       absolute covenant
+//       absolute covenant
+//       absolute covenant
+//       absolute covenant
+//       absolute covenant
+//       <br></br>
+//       <br></br>

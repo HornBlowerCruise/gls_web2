@@ -45,6 +45,7 @@ import CalendarTodo from "./Calendar/CalendarTodo";
 
 // ------------------- community ------------------- //
 import CommPostList from "./Community/CommPostList";
+import CommPostList2 from "./Community/CommPostList2";
 import CommPost from "./Community/CommPost";
 import CommunityFilter from "./Community/CommunityFilter";
 import CommPostCommentList from "./Community/CommPostCommentList";

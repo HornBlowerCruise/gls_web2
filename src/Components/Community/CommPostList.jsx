@@ -93,22 +93,28 @@ const CommPostList = (props) => {
         )
     }
     return (
+      
         <React.Fragment>
+          
             {postList? 
-                <InfiniteScroll 
-                    page={props.page} 
-                    callback={callback} 
-                    isLoading={isLoading}
-                    totalPage={totalPage}>
+                // <InfiniteScroll 
+                    // page={props.page} 
+                    // callback={callback} 
+                    // isLoading={isLoading}
+                    // totalPage={totalPage}>
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gridGap: '20px', justifyItems: 'center', alignItems: 'start', paddingLeft:'200px', paddingRight:'200px'}}>
                     {postList.map((p,idx) =>{
                         return (
+                          
                             <React.Fragment  key={idx}>
                             <CommPost category={category} postList={p} page={props.page}/>
-                            <Grid width="100%" height="12px" bg="#F7F8FA" />
+                            {/* <Grid width="30%" height="12px" bg="#F7F8FA" /> */}
                             </React.Fragment>
+                            
                         )
                     })}
-                </InfiniteScroll>
+                    </div>
+                // </InfiniteScroll>
             :
             <RelativeBox>
             <FloatBox>
@@ -118,8 +124,9 @@ const CommPostList = (props) => {
             </FloatBox>
           </RelativeBox>
             } 
-                
+        
         </React.Fragment>
+        
     )
 
 }

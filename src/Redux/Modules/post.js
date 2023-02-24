@@ -19,6 +19,8 @@ const ADD_COMMENT = "ADD_COMMENT";
 const EDIT_COMMENT = "EDIT_COMMENT";
 const DELETE_COMMENT = "DELETE_COMMENT";
 
+const SET_SHOW_TYPE = "SET_SHOW_TYPE";
+
 // 액션 생성
 const addPost = createAction(ADD_POST, (post) => ({ post }));
 const editPost = createAction(EDIT_POST, (post) => ({ post }));
@@ -35,9 +37,12 @@ const addComment = createAction(ADD_COMMENT, () => ({ }));
 const editComment = createAction(EDIT_COMMENT, () => ({}));
 const deleteComment = createAction(DELETE_COMMENT, () => ({}));
 
+const setShowType = createAction(SET_SHOW_TYPE, (type) => ({type}));
+
 
 // initial State
 const initialState = {
+  showType:"type00",
   postList: [],
   post: {
     postId: 0,
@@ -325,9 +330,24 @@ const deleteCommentDB = (postId, commentId) => {
   }
 }
 
+//게시판 타입 정하기
+const setShowTypeDB = (type) => {
+  return function (dispatch, getState, { history }) {
+    // showType = type;
+    console.log("여기까진 넘어오고",type)
+    // SET_SHOW_TYPE(type);
+    setShowType({ showType: "postType04" });
+  }
+}
+
 // Reducer
 export default handleActions(
   {
+    [SET_SHOW_TYPE]: (state, action) => produce(state, (draft) => {
+      // draft.showType = "postType04";
+      draft.showType = action.payload.type;
+      
+    }) ,
     [ADD_POST]: (state, action) => produce(state, (draft) => {
       draft.post = action.payload.post;
     }),
@@ -389,6 +409,7 @@ const actionCreators = {
     addCommentDB,
     editCommentDB,
     deleteCommentDB,
+    setShowTypeDB,
 }
 
 export { actionCreators };

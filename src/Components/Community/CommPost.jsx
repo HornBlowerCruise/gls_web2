@@ -42,13 +42,13 @@ const CommPost = (props) => {
   };
   return (
     <React.Fragment>
-      <Grid width="100%" padding="16px">
+      <Grid width="300px" padding="16px">
         <Grid width="100%" >
           <Grid><Text size="xsmall" color="#24A148">{post?.postType}</Text></Grid>
         </Grid>
         <Grid width="100%" _onClick={() => history.push(`/community/${post.postId}`)}>
           <Grid>
-            <Text size="large" weight="500">{post?.postTitle}</Text>
+            <Text size="large" weight="500">{post?.postTitle.slice(0, 16)}</Text>
           </Grid>
 
           <Grid is_flex align="center" margin="4px 0">
@@ -65,11 +65,11 @@ const CommPost = (props) => {
               </Grid>
             </Grid>
           </Grid>
-          <Grid margin="8px 0px 16px 0px"><Text color="#262626" size="small" weight="400">{post?.postContent}</Text></Grid>
           {post?.postImgUrl ?
-            <Grid width="100%" >
+            <Grid width="100%" height='270px'>
               <Image type="planterior" imgUrl={post.postImgUrl} width="100%" />
             </Grid> : null}
+            <Grid margin="8px 0px 16px 0px"><Text color="#262626" size="small" weight="400">{post?.postContent.slice(0, 50)}</Text></Grid>
         </Grid>
         {/* bottom part - 좋아요, 댓글, 북마크 */}
         <Grid width="100%" margin="20px 0 0 0" position="relative">

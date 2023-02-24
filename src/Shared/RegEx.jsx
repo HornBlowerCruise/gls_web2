@@ -6,12 +6,13 @@
   //email& 비밀번호 정규식  
  
   export const pwdCheck = (password) => {
-    let passwordRegEx = 
-    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,20}$/
-    if(password.match(passwordRegEx)===null) {
-      return false;
-    }else{
+    console.log(password);
+    // let passwordRegEx = 
+    // /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,20}$/
+    // if(password.match(passwordRegEx)===null) {
+    //   return false;
+    // }else{
       return true;
-    }
+    // }
   }
-  
+

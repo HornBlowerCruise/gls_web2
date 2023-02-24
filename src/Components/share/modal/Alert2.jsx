@@ -21,13 +21,13 @@ const Alert2 = (props) => {
 
   const history = useHistory();
 
-  React.useEffect(() => {
-    if (props.open) {
-      document.body.style.overflowY = "hidden";
-    } else {
-      document.body.style.overflowY = "hidden";
-    }
-  }, [props.open])
+  // React.useEffect(() => {
+  //   if (props.open) {
+  //     document.body.style.overflowY = "hidden";
+  //   } else {
+  //     document.body.style.overflowY = "hidden";
+  //   }
+  // }, [props.open])
 
   if(type==="center"){
     return (

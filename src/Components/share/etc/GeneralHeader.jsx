@@ -18,15 +18,16 @@ const GeneralHeader = (props) => {
             <GoBackIcon 
               style={{ width:"15px", height:"15px" }}/>
           </div>
-          <Text line="2.5em" bold size={props.size}>{props.title}</Text>
+          {/* <Text line="2.5em" bold size={props.size}>{props.title}</Text> */}
       </Header>
   )
 }
 const Header = styled.div`
+padding-top:80px;
   box-sizing: border-box;
+  border: 0px dotted green;
   position: relative;
   display: flex;
-
   text-align: center;
   align-items: center;
   justify-content:center;

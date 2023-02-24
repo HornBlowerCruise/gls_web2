@@ -1,0 +1,224 @@
+/* body {
+    overflow-y: auto;
+  } */
+header {
+    height: 70px;
+    display: flex;
+    color: black;
+    font-weight: bold;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    /* border: 1px solid gray; */
+    transition: top 0.5s;
+    z-index: 2;
+    font-size: 14px;
+    box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.2);
+    /* background-color: #ffffff; */
+    /* opacity: 80%; */
+  }
+
+  ul{
+      margin: 0px;
+      padding: 0;
+  }
+
+  li {
+      list-style: none;
+  }
+
+  .hide {
+      transition: top 0.5s;
+      top : -75px;
+  }
+
+.logo {
+    width: 100px;
+    padding-left: 20px;
+    /* border: 1px solid gray; */
+}
+
+.blankCenter {
+    flex-grow : 1;
+    /* border: 1px solid gray; */
+}
+
+/* 메뉴 css 시작 */
+.board1 {
+    vertical-align: middle;
+    position: relative;
+    padding-right:25px;
+    padding-left:25px;
+    /* border: 1px solid gray; */
+    text-align: left;
+    cursor: pointer;
+    height: 70px;
+    line-height: 70px;
+}
+
+.board1:hover .board1DropDown{
+    display:block;    
+}
+
+.board1DropDown {
+    display: none;
+    position: absolute;
+    top:70px;
+    background-color: #373737;
+    min-width: 100%;
+    box-shadow: 0px 8px 16px 0px rgb(111,111,111);
+    z-index: 1;
+    width: 143px;
+    left : 0;
+    text-align: left;
+    align-items: center;
+    padding-left: 28px;
+    line-height: 40px;
+    border: 1px solid gray;
+}
+/* 메뉴 css 끝 */
+
+li:hover {
+    color: #939393;   
+}
+
+.dropDownContent {
+    background-color: none;
+    text-decoration: none;
+    color: #DDDDDD
+}
+
+.board2 {
+    vertical-align: middle;
+    position: relative;
+    padding-right:25px;
+    padding-left:25px;
+    /* border: 1px solid gray; */
+    text-align: left;
+    cursor: pointer;
+    height: 70px;
+    line-height: 70px;
+}
+
+.board2:hover .board2DropDown{
+    display:block;    
+}
+
+.board2DropDown {
+    display: none;
+    position: absolute;
+    top:70px;
+    background-color: #373737;
+    min-width: 100%;
+    box-shadow: 0px 8px 16px 0px rgb(111,111,111);
+    z-index: 1;
+    width: 143px;
+    left : 0;
+    text-align: left;
+    align-items: center;
+    padding-left: 28px;
+    line-height: 40px;
+}
+
+.board3 {
+    vertical-align: middle;
+    position: relative;
+    padding-right:25px;
+    padding-left:25px;
+    /* border: 1px solid gray; */
+    text-align: left;
+    cursor: pointer;
+    height: 70px;
+    line-height: 70px;
+}
+
+.board3:hover .board3DropDown{
+    display:block;    
+}
+
+.board3DropDown {
+    display: none;
+    position: absolute;
+    top:70px;
+    background-color: #373737;
+    min-width: 100%;
+    box-shadow: 0px 8px 16px 0px rgb(111,111,111);
+    z-index: 1;
+    width: 143px;
+    left : 0;
+    text-align: left;
+    align-items: center;
+    padding-left: 28px;
+    line-height: 40px;
+    border: 1px solid gray;
+}
+
+.board4 {
+    vertical-align: middle;
+    position: relative;
+    padding-right:25px;
+    padding-left:25px;
+    /* border: 1px solid gray; */
+    text-align: left;
+    cursor: pointer;
+    height: 70px;
+    line-height: 70px;
+}
+
+.board4:hover .board4DropDown{
+    display:block;    
+}
+
+.board4DropDown {
+    display: none;
+    position: absolute;
+    top:70px;
+    background-color: #373737;
+    min-width: 100%;
+    box-shadow: 0px 8px 16px 0px rgb(111,111,111);
+    z-index: 1;
+    width: 143px;
+    left : 0;
+    text-align: left;
+    align-items: center;
+    padding-left: 28px;
+    line-height: 40px;
+    border: 1px solid gray;
+}
+
+.board5 {
+    vertical-align: middle;
+    position: relative;
+    padding-right:25px;
+    padding-left:25px;
+    /* border: 1px solid gray; */
+    text-align: left;
+    cursor: pointer;
+    height: 70px;
+    line-height: 70px;
+}
+
+.board5:hover .board2DropDown{
+    display:block;    
+}
+
+.board5DropDown {
+    display: none;
+    position: absolute;
+    top:70px;
+    background-color: #373737;
+    min-width: 100%;
+    box-shadow: 0px 8px 16px 0px rgb(111,111,111);
+    z-index: 1;
+    width: 143px;
+    left : 0;
+    text-align: left;
+    align-items: center;
+    padding-left: 28px;
+    line-height: 40px;
+}
+
+  .blankRight{
+      width: 20px;
+  }

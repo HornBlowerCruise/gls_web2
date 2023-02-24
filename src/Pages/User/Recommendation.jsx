@@ -18,7 +18,8 @@ const Recommendation = (props) => {
     return (
       <>
         <Container>
-          <Grid width="100%" height="100vh"> 
+          {/* <Grid width="100%" height="100vh">  */}
+          <Grid width="100%" height="1500px"> 
           <Grid margin="230px auto" align="center">
           {/*추후 애니메이션 넣기*/}
           <LeafLogo className="labelingLogo" />

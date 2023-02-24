@@ -82,9 +82,10 @@ const CommentWrite = (props) => {
 
 
 const Wrapper = styled.div`
-  width: 100%;
+  width: 700px;
   background: #F7F8FA;
   overflow: ${(props) => props.open ? "hidden" : "auto"};
+  z-index:2;
 `
 
 const CommentBox = styled.div`
@@ -98,7 +99,7 @@ const CommentBox = styled.div`
 `
 const ButtonBox = styled.div`
   position: absolute;
-  display: flex;
+  
   top: 12px;
   right: 24px;
 `

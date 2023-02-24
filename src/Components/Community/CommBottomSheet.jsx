@@ -196,7 +196,7 @@ export default function CommBottomSheet( props ) {
 
     const IconBox = styled.div`
       position: absolute;
-      top: -33px;
+      top: -11px;
       right: 8px;
       
       display: flex;

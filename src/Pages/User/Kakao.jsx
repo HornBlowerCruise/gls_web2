@@ -20,7 +20,8 @@ const Kakao = (props) => {
     return (
     
         <Container>
-            <Grid width="100%" height="100vh" align="center" padding="300px 0px 0px 0px">
+            {/* <Grid width="100%" height="100vh" align="center" padding="300px 0px 0px 0px"> */}
+            <Grid width="100%" height="1500px" align="center" padding="300px 0px 0px 0px">
                 <Text align="center">잠시만 기다려 주세요!</Text>
             </Grid>
         </Container> 

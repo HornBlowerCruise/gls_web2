@@ -1,0 +1,60 @@
+/* body {
+    overflow-y: auto;
+  } */
+
+.goalWrapper {
+    display: flex;
+    background-color: black;
+    justify-content: center;
+    align-items: center;
+    height: 160px;
+}
+
+.goal {
+    font-size: 18px;
+    color:grey;
+    /* line-height: 160px; */
+}
+
+.goal > button {
+    background-color: white;
+    color: black;
+   font-size : 12px; 
+   border-radius: 25px;
+   cursor:pointer;
+   border: none;
+   padding : 6px 32px;
+   height: 40px;
+}
+
+.contactInfo{
+    display:grid;
+    grid-template-columns: minmax(300px, 2fr) minmax(150px, 1fr) minmax(150px, 1fr);
+    padding: 30px 100px 100px 100px;
+    /* height: 400px; */
+    
+}
+
+@media (max-width:800px) {
+    .contactInfo{
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 200px 80px;
+    }
+
+    .contactInfo > item:nth-child(3){
+        grid-column: 1/3;
+        text-align: center;
+    }
+}
+
+@media (max-width:650px) {
+    .contactInfo{
+        grid-template-rows: 200px 130px 80px;
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .contactInfo > item:nth-child(3){
+        grid-column: 1/1;
+    }
+}

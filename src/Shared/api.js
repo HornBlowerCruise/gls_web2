@@ -6,11 +6,49 @@ axios.defaults.withCredentials = true;
 const api = axios.create({
   // baseURL: 'http://15.165.160.67',// local 1
   // baseURL: 'http://121.141.140.148:8085', // local 2 
-  baseURL: 'https://chorok.shop', // https
+  // baseURL: 'https://chorok.shop', // https
+  baseURL: 'http://localhost:8080', // https
   
 }, { withCredentials: true } //CORS error 방지
 );
 
+// Add a request interceptor
+api.interceptors.request.use(function (config) {
+  // Do something before request is sent
+  // console.log("request start", config)
+  return config;
+}, function (error) {
+  // Do something with request error
+  // console.log("requesterror", error)
+  return Promise.reject(error);
+});
+
+// Add a response interceptor
+api.interceptors.response.use(function (response) {
+  // Any status code that lie within the range of 2xx cause this function to trigger
+  // Do something with response data
+  console.log("get response", response)
+  console.log("get response", response.data)
+  if(response.data==='추후 qr등록을 해야합니다.'){
+    alert(response.data);
+  }
+  if(response.data==='해당 참석정보를 찾을 수 없습니다.'){
+    alert(response.data);
+  }
+  return response;
+}, function (error) {
+  // Any status codes that falls outside the range of 2xx cause this function to trigger
+  // Do something with response error
+  // console.log("response error", error)
+  
+  if(error.response.status===403 || error.response.status===401 || error.response.status===494 || error.response.status===495){
+    alert("로그인 세션이 만료되었습니다.")
+    localStorage.removeItem('token');
+    localStorage.removeItem('nickname');
+    window.location.reload();
+  }
+  return Promise.reject(error);
+});
 
 // 유저정보 관련 API
 export const userAPI = {
