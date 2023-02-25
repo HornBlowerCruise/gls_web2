@@ -102,6 +102,7 @@ margin: 0px;
     font-size: 32px;
     -webkit-text-size-adjust: auto;
     padding-bottom: 50px;
+    padding-left:170px;
 }
 
 .summary1> :nth-child(1){
@@ -124,7 +125,7 @@ margin: 0px;
     grid-gap: 20px;
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
     transition: ease all 5.5s;
-    padding-left: 100px;
+    padding-left: 250px;
 }
 
 .summary2 > item {
