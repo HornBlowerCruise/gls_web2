@@ -85,7 +85,8 @@ const addPostDB = (postTitle, postImgUrl, postContent, postTypeCode) => {
             .addPost(formData)
             .then((res) => {
                 dispatch(addPost(res));
-                history.replace(`/community`);
+                // history.replace(`/community`);
+                history.goBack();
                 window.location.reload();
             }).catch((err) => {
                 console.log("error: ", err);
