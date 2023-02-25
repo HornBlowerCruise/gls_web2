@@ -6,8 +6,8 @@ axios.defaults.withCredentials = true;
 const api = axios.create({
   // baseURL: 'http://15.165.160.67',// local 1
   // baseURL: 'http://121.141.140.148:8085', // local 2 
-  // baseURL: 'https://chorok.shop', // https
-  baseURL: 'http://localhost:8080', // https
+   baseURL: 'https://mskimseo.shop', // https
+  // baseURL: 'http://localhost:8080', // https
   
 }, { withCredentials: true } //CORS error 방지
 );
