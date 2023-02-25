@@ -65,7 +65,7 @@ const HomeNotice2 = () => {
                 </div>
                 </span>
             </item> */}
-            <CommPostList2 page={page} setPage={setPage} category="postType04" isLogin={isLogin} />
+            <CommPostList2 page={page} setPage={setPage} category="postType03" isLogin={isLogin} />
             </div>
         </div>
     </div>
