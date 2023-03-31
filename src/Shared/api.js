@@ -41,7 +41,7 @@ api.interceptors.response.use(function (response) {
   // Do something with response error
   // console.log("response error", error)
   
-  if(error.response.status===403 || error.response.status===401 || error.response.status===494 || error.response.status===495){
+  if(error.response.status===403 || error.response.status===401 || error.response.status===494 || error.response.status===495 || error.response.status===496){
     alert("로그인 세션이 만료되었습니다.")
     localStorage.removeItem('token');
     localStorage.removeItem('nickname');
